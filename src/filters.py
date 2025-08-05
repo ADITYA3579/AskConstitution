@@ -2,9 +2,9 @@
 
 import spacy
 import pandas as pd
+import en_core_web_sm
 
-# Load spaCy's English NER model
-nlp = spacy.load("en_core_web_sm")
+nlp = en_core_web_sm.load()
 
 def keyword_filter(df, keyword):
     """Filter rows where keyword is present in TEXT column."""
