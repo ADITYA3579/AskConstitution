@@ -3,6 +3,7 @@
 import spacy
 import subprocess
 import sys
+import pandas as pd
 
 try:
     nlp = spacy.load("en_core_web_sm")
