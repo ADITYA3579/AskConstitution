@@ -1,6 +1,8 @@
-streamlit
 pandas
+streamlit
 sentence-transformers
 transformers
-spacy
+torch
+joblib
 scikit-learn
+spacy
