@@ -1,17 +1,13 @@
 # NER
 
 import spacy
-import subprocess
-import importlib
+from spacy.cli import download
 
 try:
-    spacy.load("en_core_web_sm")
-except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-finally:
     nlp = spacy.load("en_core_web_sm")
-
-
+except OSError:
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 def keyword_filter(df, keyword):
     """Filter rows where keyword is present in TEXT column."""
