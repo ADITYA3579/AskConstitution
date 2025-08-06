@@ -1,16 +1,15 @@
 # NER
 
 import spacy
-import subprocess
-import sys
 import pandas as pd
+from spacy.cli import download
 
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    print("Downloading en_core_web_sm model...")
-    subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"], check=True)
+    download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
+
 
 
 def keyword_filter(df, keyword):
