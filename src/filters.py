@@ -1,11 +1,16 @@
 # NER
 
 import spacy
-import pandas as pd
+import subprocess
+import importlib
 
+try:
+    spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+finally:
+    nlp = spacy.load("en_core_web_sm")
 
-import spacy
-nlp = spacy.load("en_core_web_sm")
 
 
 def keyword_filter(df, keyword):
